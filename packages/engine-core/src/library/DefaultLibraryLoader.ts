@@ -50,6 +50,7 @@ export class DefaultLibraryLoader implements LibraryLoader {
   }
 
   protected loadLibraryByPath(libraryPath: string): Library {
+    // this require needs to be resolved at runtime, tell webpack to ignore it
     return eval('require')(libraryPath)
   }
 
